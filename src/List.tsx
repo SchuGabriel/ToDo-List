@@ -1,3 +1,5 @@
+import { FormEvent, useEffect, useState } from "react";
+
 import "./list.css";
 import "./ListEmpty.css";
 
@@ -6,7 +8,30 @@ import Clipboard from "./img/Clipboard.svg";
 
 import { MdAddCircleOutline } from "react-icons/md";
 
+export interface TaskType {
+  id: number;
+  text: string;
+  isChecked: boolean;
+}
+
 export function List() {
+  const [Tasks, setTasks] = useState<TaskType[]>([]);
+  const [Input, setInput] = useState<string>("");
+
+  function handleAddTask(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const newTask = {
+      id: new Date().getTime(),
+      text: Input,
+      isChecked: false,
+    };
+    setTasks([...Tasks, newTask]);
+  }
+
+  useEffect(() => {
+    setInput("");
+  }, [Tasks]);
+
   return (
     <>
       <div>
@@ -19,12 +44,15 @@ export function List() {
           </div>
         </div>
         <div className="main">
-          <form action="" className="FormNewTask">
+          <form onSubmit={handleAddTask} className="FormNewTask">
             <input
               type="text"
               placeholder="Adicione uma nova tarefa"
               className="inputNewTask"
-              name="newTask"
+              name="newtask"
+              onChange={(e) => setInput(e.target.value)}
+              value={Input}
+              required
             />
             <button type="submit" className="btnSubmitNewTask">
               <p>Criar</p>
@@ -41,9 +69,15 @@ export function List() {
               </p>
             </div>
             <div className="listBody">
-              <img src={Clipboard} className="clipboard"/>
-              <p>Você ainda não tem tarefas cadastradas</p>
-              <span>Crie tarefas e organize seus itens a fazer</span>
+              {Tasks.length > 0 ? (
+                Tasks.map((task) => <h4 key={task.id}>{task.text}</h4>)
+              ) : (
+                <>
+                  <img src={Clipboard} className="clipboard" />
+                  <p>Você ainda não tem tarefas cadastradas</p>
+                  <span>Crie tarefas e organize seus itens a fazer</span>
+                </>
+              )}
             </div>
           </div>
         </div>
