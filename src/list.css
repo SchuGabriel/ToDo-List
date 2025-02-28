@@ -124,6 +124,6 @@ body {
 }
 
 .listBody {
-  border-top: 2px solid var(--gray-400);
-  border-radius: 8px;
+  justify-content: center;
+  flex-grow: 1;
 }

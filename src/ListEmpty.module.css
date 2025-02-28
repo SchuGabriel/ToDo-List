@@ -1,0 +1,26 @@
+.listBodyEmpty {
+  border-top: 2px solid var(--gray-400);
+  border-radius: 8px;
+  height: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+}
+
+.listBodyEmpty > * {
+  color: var(--gray-300);
+}
+
+.listBodyEmpty > p {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.listBodyEmpty > span {
+  font-size: 1rem;
+}
+
+.clipboard {
+  padding: 1rem;
+}

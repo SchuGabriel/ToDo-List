@@ -1,0 +1,32 @@
+.taskIn {
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.task {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  font-size: 0.87rem;
+  font-weight: 400;
+}
+
+.taskIn > div {
+  line-height: 1.5;
+}
+
+.textTask {
+  flex: 1;
+}
+
+.checkboxTask{
+  border-radius: 100%;
+}
