@@ -19,23 +19,46 @@
   font-weight: 400;
 }
 
-.textTask {
+.divTextTask {
   flex: 1;
 }
 
-.checkboxTask {
-  width: 1.5rem; 
+.textTask{
+}
+
+.divCheckboxTask{
+  width: 1.5rem;
   height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxTask {
+  cursor: pointer;
+  width: 1rem; 
+  height: 1rem;
   border-radius: 50%;
   border: 2px solid var(--blue); 
   background-color: transparent;
-  cursor: pointer;
   appearance: none; 
 }
-
 
 .checkboxTask:checked {
   background-color: var(--purple-dark);
   border: none;
-  content: ;
+}
+
+.trash{
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.trash > img{
+  height: .87rem;
 }

@@ -1,21 +1,24 @@
 import "./task.css";
 import { TaskType } from "./List";
-import { GoTrash } from "react-icons/go";
+
+import trash from "./img/trash.svg";
 
 export function Task({ id, text, isChecked }: TaskType) {
   return (
     <div className="task">
       <div className="taskIn">
-        <div>
-          <input className="checkboxTask" type="checkbox" checked />
+        <div className="divCheckboxTask">
+          <input className="checkboxTask" type="checkbox" checked={isChecked} />
         </div>
-        <p className="textTask" key={id}>
-          {text}
-        </p>
-        <div>
-          <GoTrash />
+        <div className="divTextTask">
+          <p className="textTask" key={id}>
+            {text}
+          </p>
         </div>
-      </div>
+        <button type="button" className="trash">
+          <img src={trash} />
+        </button>
+        </div>
     </div>
   );
 }
