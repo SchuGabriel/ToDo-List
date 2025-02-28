@@ -7,7 +7,7 @@ export function Task({ id, text, isChecked }: TaskType) {
     <div className="task">
       <div className="taskIn">
         <div>
-          <input className="checkboxTask" type="checkbox" checked={isChecked} />
+          <input className="checkboxTask" type="checkbox" checked />
         </div>
         <p className="textTask" key={id}>
           {text}

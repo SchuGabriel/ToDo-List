@@ -19,14 +19,23 @@
   font-weight: 400;
 }
 
-.taskIn > div {
-  line-height: 1.5;
-}
-
 .textTask {
   flex: 1;
 }
 
-.checkboxTask{
-  border-radius: 100%;
+.checkboxTask {
+  width: 1.5rem; 
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--blue); 
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none; 
+}
+
+
+.checkboxTask:checked {
+  background-color: var(--purple-dark);
+  border: none;
+  content: ;
 }
