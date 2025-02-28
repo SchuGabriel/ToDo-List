@@ -1,7 +1,9 @@
 import "./list.css";
+import "./ListEmpty.css";
 
 import logo from "./img/rocket.svg";
-import { IoAddCircleOutline } from "react-icons/io5";
+import Clipboard from "./img/Clipboard.svg";
+
 import { MdAddCircleOutline } from "react-icons/md";
 
 export function List() {
@@ -38,7 +40,11 @@ export function List() {
                 Concluídas <span>0</span>
               </p>
             </div>
-            <div className="listBody"></div>
+            <div className="listBody">
+              <img src={Clipboard} className="clipboard"/>
+              <p>Você ainda não tem tarefas cadastradas</p>
+              <span>Crie tarefas e organize seus itens a fazer</span>
+            </div>
           </div>
         </div>
       </div>
