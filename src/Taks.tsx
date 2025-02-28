@@ -6,9 +6,10 @@ import trash from "./img/trash.svg";
 interface TaskProps {
   task: TaskType;
   onDeleteTask: (id: number) => void;
+  onToggleTask: (id: number) => void;
 }
 
-export function Task({ task, onDeleteTask }: TaskProps) {
+export function Task({ task, onDeleteTask, onToggleTask }: TaskProps) {
   return (
     <div className="task">
       <div className="taskIn">
@@ -17,6 +18,7 @@ export function Task({ task, onDeleteTask }: TaskProps) {
             className="checkboxTask"
             type="checkbox"
             checked={task.isChecked}
+            onClick={() => onToggleTask(task.id)}
           />
         </div>
         <div className="divTextTask">

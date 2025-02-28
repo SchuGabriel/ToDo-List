@@ -27,8 +27,16 @@ export function List() {
     setTasks([...Tasks, newTask]);
   }
 
+  function handleToggleTask(id: number) {
+    setTasks((newTasks) =>
+      newTasks.map((task) =>
+        task.id === id ? { ...task, isChecked: !task.isChecked } : task
+      )
+    );
+  }
+
   function handleDeleteTask(id: number) {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    setTasks((newTasks) => newTasks.filter((task) => task.id !== id));
   }
 
   useEffect(() => {
@@ -85,6 +93,7 @@ export function List() {
                     key={task.id}
                     task={task}
                     onDeleteTask={handleDeleteTask}
+                    onToggleTask={handleToggleTask}
                   />
                 ))
               ) : (
