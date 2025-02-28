@@ -27,6 +27,10 @@ export function List() {
     setTasks([...Tasks, newTask]);
   }
 
+  function handleDeleteTask(id: number) {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  }
+
   useEffect(() => {
     setInput("");
   }, [Tasks]);
@@ -51,7 +55,7 @@ export function List() {
               name="newtask"
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") handleAddTask()
+                if (e.key === "Enter") handleAddTask();
               }}
               value={Input}
               required
@@ -76,7 +80,13 @@ export function List() {
             </div>
             <div className="listBody">
               {Tasks.length > 0 ? (
-                Tasks.map((task) => <Task {...task} />)
+                Tasks.map((task) => (
+                  <Task
+                    key={task.id}
+                    task={task}
+                    onDeleteTask={handleDeleteTask}
+                  />
+                ))
               ) : (
                 <Empty />
               )}
