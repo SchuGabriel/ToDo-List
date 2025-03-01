@@ -72,6 +72,18 @@
   background-color: transparent;
 }
 
+.trash > svg{
+  color: var(--gray-300);
+}
+
+.trash:hover{
+  background-color: var(--gray-400);
+}
+
+.trash:hover > svg{
+  color: red;
+}
+
 .trash > img{
   height: .87rem;
 }
