@@ -45,13 +45,21 @@
   appearance: none; 
 }
 
+.checkboxTask:hover{
+  border: 2px solid var(--blue-dark);
+}
+
 .checkboxTask:checked {
   background-color: var(--purple-dark);
-  background-image: url("./img//check.svg");
+  background-image: url("./img/check.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
   border: none;
+}
+
+.checkboxTask:checked:hover {
+  background-color: var(--purple);
 }
 
 .trash{
