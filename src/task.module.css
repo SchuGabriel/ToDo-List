@@ -47,6 +47,10 @@
 
 .checkboxTask:checked {
   background-color: var(--purple-dark);
+  background-image: url("./img//check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
   border: none;
 }
 
