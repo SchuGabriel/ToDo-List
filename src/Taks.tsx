@@ -1,4 +1,5 @@
-import "./task.css";
+import styles from "./task.module.css";
+import stylesChecked from "./taskChecked.module.css";
 import { TaskType } from "./List";
 
 import trash from "./img/trash.svg";
@@ -11,24 +12,26 @@ interface TaskProps {
 
 export function Task({ task, onDeleteTask, onToggleTask }: TaskProps) {
   return (
-    <div className="task">
-      <div className="taskIn">
-        <div className="divCheckboxTask">
+    <div className={styles.task}>
+      <div className={styles.taskIn}>
+        <div className={styles.divCheckboxTask}>
           <input
-            className="checkboxTask"
+            className={styles.checkboxTask}
             type="checkbox"
             checked={task.isChecked}
             onClick={() => onToggleTask(task.id)}
           />
         </div>
-        <div className="divTextTask">
-          <p className="textTask" key={task.id}>
+        <div className={styles.divTextTask}>
+          <p 
+            className={task.isChecked ? stylesChecked.textTask : styles.textTask}
+            key={task.id}>
             {task.text}
           </p>
         </div>
         <button
           type="button"
-          className="trash"
+          className={styles.trash}
           onClick={() => onDeleteTask(task.id)}
         >
           <img src={trash} alt="Deletar tarefa" />
