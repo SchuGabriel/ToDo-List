@@ -19,6 +19,8 @@ export function List() {
   const [Input, setInput] = useState<string>("");
 
   function handleAddTask() {
+    if (Input === '') return;
+
     const newTask = {
       id: new Date().getTime(),
       text: Input,
