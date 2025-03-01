@@ -117,7 +117,7 @@ body {
 .secondLabelListHeader > span {
   background-color: var(--gray-400);
   color: var(--gray-200);
-  border-radius: 50%;
+  border-radius: 8px;
   padding: 2px 8px;
   font-size: 0.75rem;
   margin-left: 8px;

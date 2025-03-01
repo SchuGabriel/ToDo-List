@@ -85,9 +85,13 @@ export function List() {
               <p className="secondLabelListHeader">
                 Concluídas
                 <span>
-                  {Tasks.reduce((contador, task) => {
-                    return task.isChecked ? contador + 1 : contador;
-                  }, 0)}
+                  {Tasks.length > 0
+                    ? Tasks.reduce((contador, task) => {
+                        return task.isChecked ? contador + 1 : contador;
+                      }, 0) +
+                      " de " +
+                      Tasks.length
+                    : 0}
                 </span>
               </p>
             </div>
