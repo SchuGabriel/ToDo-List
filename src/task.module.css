@@ -81,7 +81,7 @@
 }
 
 .trash:hover > svg{
-  color: red;
+  color: var(--danger);
 }
 
 .trash > img{
