@@ -1,0 +1,49 @@
+.FormNewTask {
+  display: flex;
+  justify-content: center;
+  margin-top: -1.8rem;
+  height: 3.37rem;
+  width: 46rem;
+  gap: 8px;
+  margin-bottom: 4rem;
+}
+
+.FormNewTask > * {
+  border-radius: 8px;
+}
+
+.btnSubmitNewTask {
+  padding: 1rem;
+  background-color: var(--blue-dark);
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btnSubmitNewTask > * {
+  color: var(--gray-100);
+}
+
+.btnSubmitNewTask > p {
+  margin-right: 0.5rem;
+  font-size: 0.87rem;
+  color: var(--gray-100);
+}
+
+.btnSubmitNewTask:hover {
+  background-color: var(--blue);
+}
+
+.inputNewTask {
+  flex: 1;
+  padding-left: 1rem;
+  background-color: var(--gray-500);
+  color: var(--gray-100);
+  caret-color: var(--gray-100);
+}
+
+.inputNewTask:focus {
+  outline: 1px solid var(--purple);
+}

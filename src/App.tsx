@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import { List } from './List'
+import { List } from './components/List'
+import { Header } from './components/Header'
 
 function App() {
 
   return (
     <>
+      <Header />
       <List />
     </>
   )

@@ -1,0 +1,26 @@
+.header {
+  background-color: var(--gray-700);
+  height: 12.5rem;
+  justify-content: center;
+  align-content: center;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.brand > * {
+  padding: 0.37rem;
+}
+
+.brandName {
+  color: var(--blue);
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.brandName > span {
+  color: var(--purple-dark);
+}

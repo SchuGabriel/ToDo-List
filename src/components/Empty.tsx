@@ -1,5 +1,5 @@
 import styles from "./ListEmpty.module.css";
-import Clipboard from "./img/Clipboard.svg";
+import Clipboard from "../img/Clipboard.svg";
 
 export function Empty() {
   return (
